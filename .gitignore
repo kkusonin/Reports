@@ -1,0 +1,16 @@
+﻿.*
+!.gitignore
+/Makefile*
+!Makefile.PL
+/MYMETA.*
+/META.*
+/blib/
+/build/
+/inc/
+/pm_to_blib
+/MANIFEST*
+!MANIFEST.SKIP
+#README
+*.bs
+/t/tmp
+*.conf
