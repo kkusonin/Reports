@@ -3,18 +3,18 @@ package Reports::Model::VicidialDB;
 use strict;
 use base 'Catalyst::Model::DBIC::Schema';
 
-__PACKAGE__->config(
-    schema_class => 'Vicidial::Schema',
+#__PACKAGE__->config(
+#    schema_class => 'Vicidial::Schema',
     
-    connect_info => {
-        dsn => 'dbi:mysql:asterisk',
-        user => 'cron',
-        password => '1234',
-		AutoCommit        => 1,
-        RaiseError        => 1,
-        mysql_enable_utf8 => 1,
-    }
-);
+#    connect_info => {
+#        dsn => 'dbi:mysql:asterisk',
+#        user => 'cron',
+#        password => '1234',
+#		AutoCommit        => 1,
+#        RaiseError        => 1,
+#        mysql_enable_utf8 => 1,
+#    }
+#);
 
 =head1 NAME
 
