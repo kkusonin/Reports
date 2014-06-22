@@ -5,7 +5,12 @@ use namespace::autoclean;
 extends 'Catalyst::View::TT';
 
 __PACKAGE__->config(
+    ENCODING => 'utf-8',
     TEMPLATE_EXTENSION => '.tt',
+    INCLUDE_PATH => [
+        Reports->path_to('root'),
+    ],
+    WRAPPER => 'wrapper.tt',
     render_die => 1,
 );
 

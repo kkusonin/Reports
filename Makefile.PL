@@ -10,9 +10,15 @@ name 'Reports';
 all_from 'lib/Reports.pm';
 
 requires 'Catalyst::Runtime' => '5.90020';
-requires 'Catalyst::Plugin::ConfigLoader';
-requires 'Catalyst::Plugin::Static::Simple';
 requires 'Catalyst::Action::RenderView';
+requires 'Catalyst::Plugin::ConfigLoader';
+requires 'Catalyst::Plugin::RedirectAndDetach';
+requires 'Catalyst::Plugin::Session';
+requires 'Catalyst::Plugin::Session::State::Cookie';
+requires 'Catalyst::Plugin::Session::Store::File';
+requires 'Catalyst::Plugin::Static::Simple';
+requires 'Catalyst::Plugin::StatusMessage';
+requires 'Catalyst::Plugin::Unicode';
 requires 'Catalyst::View::Excel::Template::Plus';
 requires 'Moose';
 requires 'namespace::autoclean';

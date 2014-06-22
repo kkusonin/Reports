@@ -33,7 +33,7 @@ sub report_form : GET Chained('tks_base') PathPart('perf') Args(0) {
     );
 }
 
-sub create : POST Chained('tks_base') PathPart('') Args(0) {
+sub create : POST Chained('tks_base') PathPart('perf') Args(0) {
     my ($self, $c) = @_;
     
     my $date_parser = DateTime::Format::Strptime->new(pattern => "%d/%m/%Y %H:%M");
@@ -43,15 +43,17 @@ sub create : POST Chained('tks_base') PathPart('') Args(0) {
         my $end = $date_parser->parse_datetime($c->req->params->{end});
     
         my @report_rows = ($c->req->params->{selection_type} == 1) ?
-                            map { order_to_report($_) } $c->model('DB::TKS::Order')->entry_interval($start, $end)
-                          : map { order_to_report($_) } $c->model('DB::TKS::Order')->update_interval($start, $end);
+                            map { order_to_report($_) } $c->model('TksDB::Order')->entry_interval($start, $end)
+                          : map { order_to_report($_) } $c->model('TksDB::Order')->update_interval($start, $end);
     
         $c->stash(
+			current_view => 'Excel',
             report_data => \@report_rows,
-            template => 'report.tt',
+            template => 'tks/report.tt',
         );
     };
     if ($@) {
+		$c->log->debug($@);
         $c->detach('report_form');
     }
     $c->res->header('Content-Disposition', qq[attachment; filename="report.xls"]);

@@ -1,6 +1,6 @@
 package Reports::View::Excel;
-use Moose;
-use namespace::autoclean;
+use strict;
+use warnings;
 use Catalyst::View::Excel::Template::Plus;
 use base qw/Catalyst::View::Excel::Template::Plus/;
 
@@ -25,7 +25,5 @@ This library is free software. You can redistribute it and/or modify
 it under the same terms as Perl itself.
 
 =cut
-
-__PACKAGE__->meta->make_immutable;
 
 1;

@@ -87,6 +87,13 @@ __PACKAGE__->table("orders");
   is_nullable: 0
   size: 32
 
+=head2 status
+
+  data_type: 'char'
+  default_value: (empty string)
+  is_nullable: 0
+  size: 3
+
 =head2 entry_time
 
   data_type: 'timestamp'
@@ -135,6 +142,8 @@ __PACKAGE__->add_columns(
   { data_type => "varchar", default_value => "", is_nullable => 0, size => 50 },
   "uuid",
   { data_type => "char", default_value => "", is_nullable => 0, size => 32 },
+  "status",
+  { data_type => "char", default_value => "", is_nullable => 0, size => 3 },
   "entry_time",
   {
     data_type => "timestamp",
@@ -171,8 +180,8 @@ __PACKAGE__->add_columns(
 __PACKAGE__->set_primary_key("id");
 
 
-# Created by DBIx::Class::Schema::Loader v0.07035 @ 2014-06-22 09:07:17
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:mkgW3Jfxxn8vJh7FMlPztg
+# Created by DBIx::Class::Schema::Loader v0.07035 @ 2014-06-22 11:38:10
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:GHTB9gemBdG3DiYkj+YeLw
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
