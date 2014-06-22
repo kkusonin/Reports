@@ -59,6 +59,13 @@ __PACKAGE__->table("orders");
   is_nullable: 0
   size: 18
 
+=head2 sid
+
+  data_type: 'varchar'
+  default_value: (empty string)
+  is_nullable: 0
+  size: 32
+
 =head2 user
 
   data_type: 'varchar'
@@ -120,6 +127,8 @@ __PACKAGE__->add_columns(
   },
   "phone_number",
   { data_type => "varchar", default_value => "", is_nullable => 0, size => 18 },
+  "sid",
+  { data_type => "varchar", default_value => "", is_nullable => 0, size => 32 },
   "user",
   { data_type => "varchar", default_value => "", is_nullable => 0, size => 20 },
   "full_name",
@@ -162,8 +171,8 @@ __PACKAGE__->add_columns(
 __PACKAGE__->set_primary_key("id");
 
 
-# Created by DBIx::Class::Schema::Loader v0.07035 @ 2014-06-20 09:01:21
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:PbnyTLCCizbu6K6d/swFcw
+# Created by DBIx::Class::Schema::Loader v0.07035 @ 2014-06-22 09:07:17
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:mkgW3Jfxxn8vJh7FMlPztg
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

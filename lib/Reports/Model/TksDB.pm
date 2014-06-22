@@ -3,15 +3,15 @@ package Reports::Model::TksDB;
 use strict;
 use base 'Catalyst::Model::DBIC::Schema';
 
-__PACKAGE__->config(
-    schema_class => 'TKS::Schema',
+#__PACKAGE__->config(
+#    schema_class => 'TKS::Schema',
     
-    connect_info => {
-        dsn => 'dbi:mysql:tks',
-        user => 'tks',
-        password => '12345',
-    }
-);
+#    connect_info => {
+#        dsn => 'dbi:mysql:tks',
+#        user => 'tks',
+#        password => '12345',
+#    }
+#);
 
 =head1 NAME
 
