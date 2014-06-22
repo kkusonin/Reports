@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbook>
+	<worksheet name="Отчет">
+		<format valign="vcenter" bold="bold" bg_color="orange">
+		<row>
+			<cell width="15">Дата внесения</cell>
+			<cell width="17">Время внесения</cell>
+			<cell width="17">Номер телефона</cell>
+			<cell width="10">ID агента</cell>
+			<cell width="32">ФИО агента</cell>
+			<cell width="12">Lead ID</cell>
+			<cell width="5">SID</cell>
+			<cell width="8">Статус</cell>
+			<cell width="15">Дата ТКС</cell>
+			<cell width="15">Время ТКС</cell>
+		</row>
+		</format>
+
+		<loop name="report_data">
+		<row>
+			<cell><var name="entry_date"/></cell>
+			<cell><var name="entry_time"/></cell>
+			<cell><var name="phone_number"/></cell>
+			<cell><var name="user"/></cell>
+			<cell><var name="full_name"/></cell>
+			<cell><var name="lead_id"/></cell>
+			<cell><var name="sid"/></cell>
+			<cell><var name="status"/></cell>
+			<cell><var name="update_date"/></cell>
+			<cell><var name="update_time"/></cell>
+		</row>
+		</loop>
+	</worksheet>
+</workbook>

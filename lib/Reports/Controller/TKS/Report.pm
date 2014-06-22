@@ -19,21 +19,21 @@ Catalyst Controller.
 =cut
 
 
-sub report_base : Chained('/') PathPart('reports') CaptureArgs(0) {
+sub tks_base : Chained('/') PathPart('tks') CaptureArgs(0) {
     my ($self, $c) = @_;
     $c->stash( bootstrap => 1 );
 }
 
-sub report_form : GET Chained('report_base') PathPart('performance') Args(0) {
+sub report_form : GET Chained('tks_base') PathPart('perf') Args(0) {
     my ($self, $c) = @_;
     
     $c->stash(
         action   => $c->uri_for($c->controller->action_for('create')),
-        template => 'reports/index.tt',
+        template => 'tks/index.tt',
     );
 }
 
-sub create : POST Chained('report_base') PathPart('') Args(0) {
+sub create : POST Chained('tks_base') PathPart('') Args(0) {
     my ($self, $c) = @_;
     
     my $date_parser = DateTime::Format::Strptime->new(pattern => "%d/%m/%Y %H:%M");

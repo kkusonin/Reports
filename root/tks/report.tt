@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<workbook>
+	<worksheet name="Отчет">
+		<format valign="vcenter" bold="bold" bg_color="orange">
+		<row>
+			<cell width="15">Дата внесения</cell>
+			<cell width="17">Время внесения</cell>
+			<cell width="17">Номер телефона</cell>
+			<cell width="10">ID агента</cell>
+			<cell width="32">ФИО агента</cell>
+			<cell width="12">Lead ID</cell>
+			<cell width="5">SID</cell>
+			<cell width="8">Статус</cell>
+			<cell width="15">Дата ТКС</cell>
+			<cell width="15">Время ТКС</cell>
+		</row>
+		</format>
+
+        [% FOR row IN report_data %]
+		<row>
+			<cell>[% row.entry_date %]</cell>
+			<cell>[% row.entry_time %]</cell>
+			<cell>[% row.phone_number %]</cell>
+			<cell>[% row.user %]</cell>
+			<cell>[% row.full_name %]</cell>
+			<cell>[% row.lead_id %]</cell>
+			<cell>[% row.sid %]</cell>
+			<cell>[% row.status %]</cell>
+			<cell>[% row.update_date %]</cell>
+			<cell>[% row.update_time %]</cell>
+		</row>
+		[% END %]
+	</worksheet>
+</workbook>

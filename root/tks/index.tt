@@ -1,0 +1,41 @@
+﻿[% IF error_msg %]
+<div class="alert alert-error">  
+  <a class="close" data-dismiss="alert">×</a>  
+  <strong>[% error_msg %]</strong>  
+</div>
+[% ELSIF status_msg %]  
+<div class="alert alert-success">  
+  <a class="close" data-dismiss="alert">×</a>  
+  <strong>[% status_msg %]</strong>  
+</div>  
+[% ELSIF info_msg %]
+<div class="alert alert-info">  
+  <a class="close" data-dismiss="alert">×</a>  
+  <strong>[% info_msg %]</strong>  
+</div>
+[% END %]
+
+<form action=[% action %] class="form-horizontal" id="form_report" method="post">
+	<div class="control-group">
+		<label class="control-label" for="start">Начало периода* </label>
+		<div class="controls">
+		<input type="datetime" name="start" id="start" placeholder="ДД/ММ/ГГГГ ЧЧ:ММ" value="" /></div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="end">Конец периода* </label>
+		<div class="controls">
+		<input type="datetime" name="end" id="end" placeholder="ДД/ММ/ГГГГ ЧЧ:ММ" value="" /></div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="selection_type">Тип выборки</label>
+		<div class="controls">
+			<select name="selection_type" id="selection_type">
+				<option value="1" id="selection_type.0">По времени добавления</option>
+				<option value="2" id="selection_type.1">По времени изменения</option>
+			</select>
+		</div>
+	</div>
+	<div class="form-actions">
+		<input type="submit" id="submit" value="Ввод" class="btn" />
+	</div>
+</form>
